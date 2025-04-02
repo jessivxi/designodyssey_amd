@@ -75,7 +75,7 @@
         <a1 href="#">Administrador Odyssey</a1>
         </ul>
         <ul class="menu">
-            <li><a href="#">Painel</a></li>
+        <li><a href="index.php">Painel</a></li> <!-- Link atualizado -->
             <li><a href="#">Gerenciamento de Usuário</a></li>
             <li><a href="#">Controle de Serviços</a></li>
             <li><a href="#">Controle de Vendas</a></li>

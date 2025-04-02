@@ -133,17 +133,18 @@
 }
 .calender_painel_grey_colune{
         display: flex;
-        height: 100vh;
+        height: auto;
         width: auto;
-        padding-right: 26%;
+        gap: 50px;
         justify-content: center;
+        padding-left: 8%;
         flex-direction: row;
         margin-top: 70px; /* Adiciona espaçamento acima da box cinza */
 }
 .calender_box_grey{
     display: flex;
     height:300px;
-    width: 430px;
+    width: 510px;
     background-color: #D9D9D9;
 }
 .tittle_calender{
@@ -158,6 +159,62 @@
     display: flex;
     justify-content: center;
     color: white;
-    padding-top: 65px;
+    padding: 65px 0px 0px 40px ;
+    font-size: 120px;
+}
+.grafic_box_grey{
+    display: flex;
+    height:300px;
+    width: 510px;
+    background-color: #D9D9D9;
+
+}
+.tittle_grafic{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0px 0px 30px;
+
+}
+.icon_sgv_grafic{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 65px 0px 0px 55px ;
+    font-size: 120px;
+}
+
+.list_painel_grey_colune{
+    display: flex;
+    height: 40vh;
+    width: auto;
+    padding-left: 26%;
+    margin-top: 50px; /* Adiciona espaçamento acima da box cinza */
+
+
+}
+.list_box_grey{
+    display: flex;
+    height:300px;
+    width: 76%;
+    background-color: #D9D9D9;
+}
+
+.tittle_list{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0px 0px 30px;
+
+}
+.icon_sgv_list{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 65px 0px 0px 255px ;
     font-size: 120px;
 }
