@@ -1,0 +1,107 @@
+/* Painel */
+.painel_adm {
+    margin-bottom: 20px;
+}
+
+.title_painel {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    padding-left: 353px;
+}
+
+.result_painel {
+    color: #666;
+    padding-left: 353px;
+}
+
+/* Tabela */
+.table_service {
+    display: flex;
+    height: 200px;
+    width: 80%;
+    padding-left: 14%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.custom-table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.custom-table th, .custom-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões */
+button {
+    padding: 5px 8px;
+    border: none;
+    font-weight: bold;
+    border-radius: 3px;
+    height: 40px;
+    width: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+button.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+button.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+button.btn-secondary:hover {
+    background-color: #5a6268;
+}

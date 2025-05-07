@@ -1,0 +1,223 @@
+.painel_adm{
+    display: flex;
+}
+
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    padding: 0px 50px 0px 0px;
+    font-weight: bold;
+
+  }
+
+.boxes_adm_main{
+    display: flex;
+    height: 16vh;
+    justify-content: center;
+    width: auto;
+    gap: 100px;
+    padding-left: 150px;
+ 
+}
+.box_gerencer_color_red{
+    display: flex;
+    width: 11%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    background-color: #D03737;
+    cursor: pointer;
+    
+}
+.number_gerencer{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 55px 0px 0px 20px;
+
+}
+.title_gerencer{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 50px 10px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.box_service_color_blue{
+    display: flex;
+    width: 11%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    background-color: #0096D1;
+    cursor: pointer;
+}
+
+.number_service{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 55px 0px 0px 20px;
+}
+.title_service{
+    display: flex;
+    padding: 0px 0px 0px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    flex-direction: column;
+}
+
+.box_control_color_yellow{
+    display: flex;
+    width: 11%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    background-color: #FFD477;
+    cursor: pointer;
+}
+
+.number_control{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 55px 0px 0px 20px;
+}
+.title_control{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 50px 0px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.box_suport_color_green{
+    display: flex;
+    width: 11%;
+    height: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: white;
+    background-color: #26AB4E;
+    cursor: pointer;
+}
+.title_suport{
+    display: flex;
+    padding: 0px 20px 70px 0px;
+    font-weight: bold;
+    font-size: 15px;
+
+}  
+.bi-person-fill-check{
+    display: flex;
+    font-size: 50px;
+    align-items: end;
+    padding: 10px 0px 0px 30px;
+}
+.bi-person-bounding-box{
+    display: flex;
+    color: white;
+    font-size: 50px;
+    padding: 10px 0px 0px 30px;
+
+}
+.bi-bar-chart-fill{
+    display: flex;
+    color: white;
+    font-size: 50px;
+    padding: 10px 0px 0px 30px;
+}
+.calender_painel_grey_colune{
+        display: flex;
+        height: auto;
+        width: auto;
+        gap: 50px;
+        justify-content: center;
+        padding-left: 8%;
+        flex-direction: row;
+        margin-top: 70px; /* Adiciona espaçamento acima da box cinza */
+}
+.calender_box_grey{
+    display: flex;
+    height:300px;
+    width: 510px;
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+.tittle_calender{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0px 0px 30px;
+}
+.icon_sgv_calender{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 65px 0px 0px 40px ;
+    font-size: 120px;
+}
+.grafic_box_grey{
+    display: flex;
+    height:300px;
+    width: 510px;
+    background-color: #D9D9D9;
+    cursor: pointer;
+
+
+}
+.tittle_grafic{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0px 0px 30px;
+
+}
+.icon_sgv_grafic{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 65px 0px 0px 55px ;
+    font-size: 120px;
+}
+
+.list_painel_grey_colune{
+    display: flex;
+    height: 40vh;
+    width: auto;
+    padding-left: 26%;
+    margin-top: 50px; /* Adiciona espaçamento acima da box cinza */
+
+
+}
+.list_box_grey{
+    display: flex;
+    height:300px;
+    width: 76%;
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.tittle_list{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0px 0px 30px;
+
+}
+.icon_sgv_list{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 65px 0px 0px 255px ;
+    font-size: 120px;
+}

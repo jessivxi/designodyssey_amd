@@ -1,0 +1,91 @@
+/* Painel */
+.painel_adm {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title_painel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.result_painel {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Tabela */
+.table_service {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.custom-table th, .custom-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+}
+
+custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões */
+button {
+    padding: 5px 8px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+button.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+button.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+button.btn-secondary:hover {
+    background-color: #5a6268;
+}

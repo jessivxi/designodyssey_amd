@@ -1,0 +1,103 @@
+.painel_adm{
+    display: flex;
+    flex-direction: column;
+}
+.title_painel{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 350px;
+    margin-top: 50px;
+}
+.result_painel{
+    display: flex;
+    padding-left: 350px;
+    color: #8a8a8a;
+}
+.table_user{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-left: 350px;
+    margin-top: 50px;
+}
+
+.custom-table {
+    display: flex;
+    flex-direction: column;
+    height:  auto;
+    gap: 10px;
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table-header {
+    display: flex;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px 10px;
+}
+
+.custom-table-row {
+    display: flex;
+    border-top: 1px solid #d1d1d1;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+
+.custom-table-cell {
+    flex: 1;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.custom-table-cell:last-child {
+    text-align: center;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: #0096D1;
+}
+
+button.btn-primary {
+    background-color: #0096D1; /* Azul mais claro */
+    color: white;
+    border: none;
+}
+
+button.btn-primary:hover {
+    background-color: #0096D1; /* Azul ainda mais claro no hover */
+}
+
+button.btn-primary:active {
+    background-color: #0096D1; /* Azul original ao clicar */
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+button.btn-danger:active {
+    background-color: #8a1c28; /* Cor ao clicar */
+}
+
+
