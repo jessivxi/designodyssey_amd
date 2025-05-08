@@ -1,3 +1,4 @@
+
 /* Painel */
 .painel_adm {
     margin-bottom: 20px;
@@ -9,26 +10,26 @@
     color: #000000;
     margin-top: 50px;
     margin-bottom: 5px;
-    padding-left: 353px;
+    padding-left: 22%;
 }
 
 .result_painel {
     color: #666;
-    padding-left: 353px;
+    padding-left: 22%;
 }
 
 /* Tabela */
 .table_service {
     display: flex;
     height: 200px;
-    width: 80%;
+    width: 75%;
     padding-left: 14%;
     justify-content: center;
     margin-top: 50px;
 }
 
 .custom-table {
-    width: 90%;
+    width: 80%;
     border-collapse: collapse;
     background-color: #f0f0f0;
     border: 1px solid #ddd;

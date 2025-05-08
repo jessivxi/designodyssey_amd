@@ -17,11 +17,13 @@
     </div>
 
     <!-- Tabela de Controle de Vendas -->
+
+    <!-- Tabela de Controle de Serviços -->
     <div class="table_service">
         <table class="custom-table">
             <thead>
                 <tr>
-                    <th>ID da Venda</th>
+                    <th>ID Produto</th>
                     <th>Item</th>
                     <th>Popularidade</th>
                     <th>Status</th>
@@ -31,20 +33,21 @@
                 <tr>
                     <td>1</td>
                     <td>Design Gráfico</td>
-                    <td>Alta</td>
+                    <td>Em alta</td>
                     <td><button class="btn btn-success btn-sm">Entregue</button></td>
+                    
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Desenvolvimento Web</td>
-                    <td>Média</td>
+                    <td>Baixa Popularidade</td>
                     <td><button class="btn btn-warning btn-sm">Pendente</button></td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Marketing Digital</td>
-                    <td>Baixa</td>
-                    <td><button class="btn btn-secondary btn-sm">Não Iniciado</button></td>
+                    <td>Desenvolvimento de logo</td>
+                    <td>Em alta</td>
+                    <td><button class="btn btn-warning btn-sm">Nao Iniciado</button></td>
                 </tr>
             </tbody>
         </table>

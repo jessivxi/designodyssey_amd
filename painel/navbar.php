@@ -79,7 +79,7 @@
             <li><a href="GerencidaorUser.php">Gerenciamento de Usuário</a></li>
             <li><a href="Controlservice.php">Controle de Serviços</a></li>
             <li><a href="Controlvendas.php">Controle de Vendas</a></li>
-            <li><a href="#">Suporte Técnico</a></li>
+            <li><a href="SuportTec.php">Suporte Técnico</a></li>
         </ul>
     </div>
     <div class="divisor_painel_adm"></div>
