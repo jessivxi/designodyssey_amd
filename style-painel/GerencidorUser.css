@@ -1,40 +1,56 @@
+/* GERENCIADOR DE USUÁRIOS - CSS COMPLETO COM LARGURA AJUSTADA */
 
-.painel_adm{
+.painel_adm {
     display: flex;
     flex-direction: column;
+    padding-left: 15%; /* Ajustado de 24% */
+    padding-right: 15%; /* Ajustado de 24% */
 }
-.title_painel{
-    display: flex;
-    font-size: 40px;
-    font-weight: bold;
-    padding-left: 350px;
-    margin-top: 50px;
+
+.title_painel {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: 700;
+    padding-left: 15%; /* Ajustado para alinhar com a tabela */
+    margin-top: 3rem;
+    position: relative;
 }
-.result_painel{
-    display: flex;
-    padding-left: 350px;
+
+.title_painel::after {
+    content: "";
+    position: absolute;
+    left: 15%; /* Ajustado para alinhar */
+    bottom: -5px;
+    width: 60px;
+    height: 3px;
+    background: #0096D1;
+}
+
+.result_painel {
+    padding-left: 15%; /* Ajustado para alinhar */
     color: #8a8a8a;
 }
-.table_user{
+
+.table_user {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 100%;
-    padding-left: 350px;
-    margin-top: 50px;
+    padding-left: 25%; /* Adicionado para simetria */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .custom-table {
     display: flex;
     flex-direction: column;
-    height:  auto;
-    gap: 10px;
-    width: 80%;
-    border-collapse: collapse;
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    height: auto;
+    gap: 0;
+    width: 90%; /* Aumentado de 80% */
+    border-radius: 15px;
+    background-color: #807f7f;
     overflow: hidden;
+    box-shadow: #d3d1d17a 0px 0px 10px 1px;
 }
 
 .custom-table-header {
@@ -50,8 +66,12 @@
     border-top: 1px solid #d1d1d1;
     transition: background-color 0.3s;
     cursor: pointer;
+    background-color: white;
 }
 
+.custom-table-row:hover {
+    background-color: #f9f9f9;
+}
 
 .custom-table-cell {
     flex: 1;
@@ -65,6 +85,7 @@
     text-align: center;
 }
 
+/* BOTÕES (MANTIDOS ORIGINAIS) */
 button {
     margin: 0 5px;
     padding: 5px 10px;
@@ -72,20 +93,17 @@ button {
     font-size: 14px;
     cursor: pointer;
     border-color: #0096D1;
+    transition: all 0.2s;
 }
 
 button.btn-primary {
-    background-color: #0096D1; /* Azul mais claro */
+    background-color: #0096D1;
     color: white;
     border: none;
 }
 
 button.btn-primary:hover {
-    background-color: #0096D1; /* Azul ainda mais claro no hover */
-}
-
-button.btn-primary:active {
-    background-color: #0096D1; /* Azul original ao clicar */
+    background-color: #0085b8;
 }
 
 button.btn-danger {
@@ -94,11 +112,40 @@ button.btn-danger {
 }
 
 button.btn-danger:hover {
-    background-color: #a71d2a;
+    background-color: #c82333;
 }
 
-button.btn-danger:active {
-    background-color: #8a1c28; /* Cor ao clicar */
+/* ÍCONES (MANTIDOS ORIGINAIS) */
+.btn-primary::before {
+    content: "\f4ca";
+    font-family: "bootstrap-icons";
+    margin-right: 5px;
+    font-size: 12px;
 }
 
+.btn-danger::before {
+    content: "\f5de";
+    font-family: "bootstrap-icons";
+    margin-right: 5px;
+    font-size: 12px;
+}
 
+/* PAGINAÇÃO (MANTIDA ORIGINAL) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.page-link {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #0096D1;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;
+}

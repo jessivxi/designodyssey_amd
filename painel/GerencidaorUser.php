@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="../style-painel/GerencidorUser.css">
     <title>Gerenciamento de Usuários</title>
     <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
     <div class="painel_adm">
-        <p class="title_painel">Usuários</p>
+        <p class="title_painel">Gerenciamento de Usuários</p>
         <p class="result_painel">Resultados encontrados do 1 ao 2 </p>
     </div>
 
