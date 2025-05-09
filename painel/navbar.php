@@ -76,7 +76,7 @@
         </ul>
         <ul class="menu">
         <li><a href="index.php">Painel</a></li> <!-- Link atualizado -->
-            <li><a href="GerencidaorUser.php">Gerenciamento de Usuário</a></li>
+            <li><a href="GerenciadorUser.php">Gerenciamento de Usuário</a></li>
             <li><a href="Controlservice.php">Controle de Serviços</a></li>
             <li><a href="Controlvendas.php">Controle de Vendas</a></li>
             <li><a href="SuportTec.php">Suporte Técnico</a></li>

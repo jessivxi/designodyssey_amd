@@ -19,11 +19,8 @@ body {
     position: relative;
 }
 
-
-
 .result_painel {
     color: #64748b;
-    margin-bottom: 1.5rem;
 }
 
 /* ===== TABELA ===== */
@@ -33,7 +30,8 @@ body {
 }
 
 .custom-table {
-    width: 100%;
+    width: 100%; /* Aumenta a largura da tabela */
+    margin: 0 auto; /* Centraliza a tabela */
     border-collapse: separate;
     border-spacing: 0;
     background: white;
@@ -120,7 +118,7 @@ body {
 .not-delivered {
     background: #ffebee;
     color: #c62828;
-    border-color: #ef5350;
+
 }
 
 .not-delivered i {

@@ -16,11 +16,12 @@
     position: relative;
 }
 
+
 .result_painel {
     padding-left: 15%; /* Ajustado para alinhar */
     color: #8a8a8a;
 }
-s
+
 .table_user {
     display: flex;
     flex-direction: column;
