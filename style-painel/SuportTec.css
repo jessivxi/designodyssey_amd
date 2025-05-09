@@ -1,8 +1,12 @@
-/* Painel */
+/* PÁGINA DE SUPORTE TÉCNICO - CSS COMPLETO */
+
+/* Container Principal */
 .painel_adm {
     margin-bottom: 20px;
+    padding: 20px 10%;
 }
 
+/* Títulos */
 .title_painel {
     font-size: 24px;
     font-weight: bold;
@@ -15,33 +19,37 @@
     color: #666;
 }
 
-/* Tabela */
+/* Tabela de Chamados */
 .table_service {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    padding: 0 5%;
 }
 
 .custom-table {
-    width: 90%;
+    width: 100%;
+    max-width: 1000px;
     border-collapse: collapse;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.custom-table th, .custom-table td {
-    padding: 10px;
+.custom-table th, 
+.custom-table td {
+    padding: 12px 15px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
 }
 
 .custom-table th {
     background-color: #f8f9fa;
     font-weight: bold;
-    text-align: center;
+    color: #444;
 }
 
 .custom-table tr:nth-child(even) {
@@ -52,74 +60,106 @@
     background-color: #f1f1f1;
 }
 
-/* Formulário */
+/* Formulário de Suporte */
 .support_form {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin: 30px 0;
+    padding: 0 5%;
 }
 
-form {
-    width: 90%;
+.form-container {
+    width: 100%;
     max-width: 500px;
     background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #555;
+    font-weight: 500;
 }
 
-input, textarea {
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
+    transition: border 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus, 
+textarea:focus {
     border-color: #0096D1;
     outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 150, 209, 0.1);
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* Botões */
-button {
-    padding: 5px 8px;
+.btn {
+    padding: 10px 20px;
     border: none;
-    border-radius: 3px;
-    font-size: 12px;
+    border-radius: 4px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s;
+    font-weight: 500;
 }
 
-button.btn-success {
+.btn-success {
     background-color: #28a745;
     color: white;
 }
 
-button.btn-success:hover {
+.btn-success:hover {
     background-color: #218838;
+    transform: translateY(-1px);
 }
 
-button.btn-danger {
+.btn-danger {
     background-color: #dc3545;
     color: white;
 }
 
-button.btn-danger:hover {
+.btn-danger:hover {
     background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .painel_adm {
+        padding: 20px 5%;
+    }
+    
+    .custom-table {
+        font-size: 13px;
+    }
+    
+    .custom-table th, 
+    .custom-table td {
+        padding: 10px 8px;
+    }
+    
+    .form-container {
+        padding: 20px 15px;
+    }
 }
