@@ -1,142 +1,108 @@
-/* GERENCIADOR DE USUÁRIOS - CSS COMPLETO COM LARGURA AJUSTADA */
-
+/* GERENCIADOR DE USUÁRIOS - CSS */
+/* Container Principal */
 .painel_adm {
-    display: flex;
-    flex-direction: column;
-    padding-left: 15%; /* Ajustado de 24% */
-    padding-right: 15%; /* Ajustado de 24% */
+    margin-bottom: 20px;
+    padding: 20px 10%;
 }
 
+/* Títulos */
 .title_painel {
-    font-size: 2rem;
+    font-size: 47px;
+    font-weight: bold;
+    padding-left: 18%;
     color: #000000;
-    font-weight: 700;
-    padding-left: 15%; /* Ajustado para alinhar com a tabela */
-    margin-top: 3rem;
-    position: relative;
+    margin-bottom: 5px;
 }
-
 
 .result_painel {
-    padding-left: 15%; /* Ajustado para alinhar */
-    color: #8a8a8a;
+    font-size: 14px;
+    color: #666;
+    padding-left: 18%;
 }
 
-.table_user {
+/* Tabela de Usuários */
+.table_service {
     display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 100%;
-    padding-left: 25%; /* Adicionado para simetria */
     justify-content: center;
     margin-top: 20px;
+    padding: 0 5%;
 }
 
 .custom-table {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    gap: 0;
-    width: 90%; /* Aumentado de 80% */
-    border-radius: 15px;
-    background-color: #807f7f;
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: #d3d1d17a 0px 0px 10px 1px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.custom-table-header {
-    display: flex;
-    background-color: #f0f0f0;
-    font-weight: bold;
+.custom-table th, 
+.custom-table td {
+    padding: 12px 15px;
     text-align: left;
-    padding: 15px 10px;
+    border: 1px solid #eee;
 }
 
-.custom-table-row {
-    display: flex;
-    border-top: 1px solid #d1d1d1;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    background-color: white;
+.custom-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #000000;
 }
 
-.custom-table-row:hover {
+.custom-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.custom-table-cell {
-    flex: 1;
-    padding: 10px 15px;
-    text-align: left;
-    font-size: 14px;
-    color: #333;
+.custom-table tr:hover {
+    background-color: #f1f1f1;
 }
 
-.custom-table-cell:last-child {
-    text-align: center;
-}
-
-/* BOTÕES (MANTIDOS ORIGINAIS) */
-button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer;
-    border-color: #0096D1;
-    transition: all 0.2s;
-}
-
-button.btn-primary {
-    background-color: #0096D1;
-    color: white;
+/* Botões de Ação */
+.btn {
+    padding: 6px 12px;
     border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    margin-right: 5px;
 }
 
-button.btn-primary:hover {
-    background-color: #0085b8;
+.btn-edit {
+    background-color: #007bff;
+    color: white;
 }
 
-button.btn-danger {
+.btn-edit:hover {
+    background-color: #0069d9;
+}
+
+.btn-delete {
     background-color: #dc3545;
     color: white;
 }
 
-button.btn-danger:hover {
+.btn-delete:hover {
     background-color: #c82333;
 }
 
-/* ÍCONES (MANTIDOS ORIGINAIS) */
-.btn-primary::before {
-    content: "\f4ca";
-    font-family: "bootstrap-icons";
-    margin-right: 5px;
-    font-size: 12px;
-}
-
-.btn-danger::before {
-    content: "\f5de";
-    font-family: "bootstrap-icons";
-    margin-right: 5px;
-    font-size: 12px;
-}
-
-/* PAGINAÇÃO (MANTIDA ORIGINAL) */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 5px;
-}
-
-.page-link {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    color: #0096D1;
-    text-decoration: none;
-}
-
-.page-link:hover {
-    background-color: #f0f0f0;
+/* Responsividade */
+@media (max-width: 768px) {
+    .painel_adm {
+        padding: 20px 5%;
+    }
+    
+    .custom-table {
+        font-size: 13px;
+    }
+    
+    .custom-table th, 
+    .custom-table td {
+        padding: 10px 8px;
+    }
 }
