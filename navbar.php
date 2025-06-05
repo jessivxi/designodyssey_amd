@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,9 +126,9 @@
         </ul>
         <ul class="menu">
             <li><a href="index.php">Painel</a></li>
-            <li><a href="GerenciadorUser.php">Gerenciamento de Usuário</a></li>
-            <li><a href="Controlservice.php">Controle de Serviços</a></li>
-            <li><a href="Controlvendas.php">Controle de Vendas</a></li>
+            <li><a href="usuarios.php">Gerenciamento de Usuário</a></li>
+            <li><a href="servicos.php">Controle de Serviços</a></li>
+            <li><a href="vendas.php">Controle de Vendas</a></li>
             <li><a href="SuportTec.php">Suporte Técnico</a></li>
         </ul>
     </div>

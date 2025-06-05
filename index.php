@@ -1,6 +1,7 @@
 <?php
     include "navbar.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,7 +17,6 @@
 <body>
     <div class="painel_adm">
     </div>
-
     <div class="boxes_adm_main">
         <!-- Gerenciamento de Usuário -->
         <div class="box_gerencer_color_red">

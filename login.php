@@ -2,20 +2,25 @@
 <?php
 // Inicia a sessão
 session_start();
+require_once('../../api-designOdyssey/conexão.php'); // ajuste o caminho se necessário
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Credenciais de exemplo (substitua por validação real, como banco de dados)
-    $adminUsername = 'admin';
-    $adminPassword = '123456';
+    // Busca o admin no banco
+    $sql = "SELECT * FROM admins WHERE usuario = :usuario LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':usuario', $username, PDO::PARAM_STR);
+    $stmt->execute();
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($username === $adminUsername && $password === $adminPassword) {
-        // Login bem-sucedido
+    // Verifica se encontrou e se a senha confere
+    if ($admin && $password === $admin['senha']) { // Use password_verify se usar hash
         $_SESSION['admin_logged_in'] = true;
-        header('Location: ../painel/index.php'); // Redireciona para o painel
+        $_SESSION['admin_nome'] = $admin['usuario'];
+        header('Location: ../painel/index.php');
         exit;
     } else {
         $error = 'Usuário ou senha inválidos.';
@@ -23,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
