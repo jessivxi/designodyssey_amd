@@ -127,8 +127,10 @@
         <ul class="menu">
             <li><a href="index.php">Painel</a></li>
             <li><a href="usuarios.php">Gerenciamento de Usuário</a></li>
+            <li><a href="administrador.php">Gerenciamento de administrador</a></li>
             <li><a href="servicos.php">Controle de Serviços</a></li>
             <li><a href="vendas.php">Controle de Vendas</a></li>
+            <li><a href="controleImagens.php">Controle de imagens</a></li>
             <li><a href="SuportTec.php">Suporte Técnico</a></li>
         </ul>
     </div>

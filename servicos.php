@@ -83,6 +83,15 @@ function statusBadge($status) {
     <div class="painel_adm">
         <h1 class="title_painel"> Controle de Serviços</h1>
         <p class="result_painel">Status atual dos serviços dos clientes e freelancers</p>
+         <div>
+                <button class="btn btn-outline-secondary me-2">
+                    <i class="bi bi-filter"></i> Filtrar
+                </button>
+                <button class="btn btn-outline-secondary">
+                    <i class="bi bi-download"></i> Exportar
+                </button>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered table-hover align-middle shadow-sm">
                 <thead>

@@ -133,7 +133,7 @@
                     datasets: [{
                         label: 'Vendas',
                         data: [4, 7, 3, 6],
-                        backgroundColor: '#1976d2'
+                        backgroundColor: '#0096D1'
                     }]
                 },
                 options: {
@@ -201,19 +201,19 @@
 
         /* Cores das boxes */
         .box_gerencer_color_red {
-            background: #ef4444;
+            background:rgb(202, 33, 33);
             color: #fff;
         }
         .box_service_color_blue {
-            background: #3b82f6;
+            background:#0096D1;
             color: #fff;
         }
         .box_control_color_yellow {
-            background: rgb(255, 220, 45);
+            background: rgb(238, 208, 59);
             color: #222;
         }
         .box_suport_color_green {
-            background: #22c55e;
+            background:rgb(25, 119, 59);
             color: #fff;
         }
 
