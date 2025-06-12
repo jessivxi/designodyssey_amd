@@ -75,7 +75,6 @@ function statusBadge($status) {
             color: rgb(0, 0, 0);
             font-size: 1rem;
             letter-spacing: 1px;
-            border-bottom: 2px solid rgb(183, 183, 184);
         }
         .table tbody tr:hover {
             background: rgb(231, 231, 231);

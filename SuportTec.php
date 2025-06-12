@@ -109,7 +109,6 @@ function statusBadge($status) {
             color:rgb(0, 0, 0);
             font-size: 1rem;
             letter-spacing: 1px;
-            border-bottom: 2px solid #d1d5db;
         }
         .table tbody tr {
             transition: background 0.2s;
@@ -171,6 +170,17 @@ function statusBadge($status) {
     <div class="painel_adm">
         <h1 class="title_painel">Suporte Técnico</h1>
         <p class="result_painel">Acompanhe e gerencie os chamados de suporte</p>
+         
+        <div class="d-flex justify-content-between mb-3">
+            <div>
+                <button class="btn btn-outline-secondary me-2">
+                    <i class="bi bi-filter"></i> Filtrar
+                </button>
+                <button class="btn btn-outline-secondary">
+                    <i class="bi bi-download"></i> Exportar
+                </button>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered table-hover align-middle shadow-sm">
                 <thead>

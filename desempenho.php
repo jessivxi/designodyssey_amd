@@ -53,7 +53,7 @@ $totalGeral = count($desempenhos);
             letter-spacing: -1px;
         }
         .result_painel {
-            color: #64748b;
+            color: rgb(168, 165, 165);
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
@@ -67,11 +67,11 @@ $totalGeral = count($desempenhos);
             background: white;
         }
         .table thead th {
-            background: #e2e8f0;
+            background:rgba(222, 227, 230, 0.9);
             color:rgb(0, 0, 0);
             font-size: 1rem;
             letter-spacing: 1px;
-            border-bottom: 2px solid #cbd5e1;
+    
         }
         .table tbody tr:hover {
             background: #f1f5f9;
@@ -104,11 +104,6 @@ $totalGeral = count($desempenhos);
                 </button>
                 <button class="btn btn-outline-secondary">
                     <i class="bi bi-download"></i> Exportar
-                </button>
-            </div>
-            <div>
-                <button class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i> Nova Avaliação
                 </button>
             </div>
         </div>
