@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,12 +124,12 @@
             <a1 href="#">Administrador Odyssey</a1>
         </ul>
         <ul class="menu">
-            <li><a href="index.php">Painel</a></li>
-            <li><a href="usuarios.php">Gerenciamento de Usuário</a></li>
-            <li><a href="administrador.php">Gerenciamento de administrador</a></li>
-            <li><a href="servicos.php">Controle de Serviços</a></li>
-            <li><a href="desempenho.php">Controle de desempenho</a></li>
-            <li><a href="controleImagens.php">Controle de imagens</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/">Painel</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/usuarios/">Gerenciamento de Usuário</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/administrador/">Gerenciamento de administrador</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/servicos/">Controle de Serviços</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/desempenho/">Controle de desempenho</a></li>
+            <li><a href="http://localhost/dashboard/designodyssey_amd/controleImagens/">Controle de imagens</a></li>
             <li><a href="SuportTec.php">Suporte Técnico</a></li>
         </ul>
     </div>

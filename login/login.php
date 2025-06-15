@@ -1,8 +1,7 @@
-<!-- filepath: c:\xampp\htdocs\tnet\designodyssey_amd\Login_adm\login.php -->
 <?php
 // Inicia a sessão
 session_start();
-require_once('../../api-designOdyssey/conexão.php'); // ajuste o caminho se necessário
+require_once('../api-designOdyssey/conexao.php'); // ajuste o caminho se necessário
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,22 +9,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Busca o admin no banco
-    $sql = "SELECT * FROM admins WHERE usuario = :usuario LIMIT 1";
+    $sql = "SELECT * FROM administradores WHERE nome = :nome LIMIT 1";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':usuario', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':nome', $username, PDO::PARAM_STR);
     $stmt->execute();
     $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Verifica se encontrou e se a senha confere
     if ($admin && $password === $admin['senha']) { // Use password_verify se usar hash
         $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_nome'] = $admin['usuario'];
+        $_SESSION['admin_nome'] = $admin['nome'];
         header('Location: ../painel/index.php');
         exit;
     } else {
         $error = 'Usuário ou senha inválidos.';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

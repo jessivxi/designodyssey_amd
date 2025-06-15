@@ -1,6 +1,5 @@
 <?php
-include "navbar.php";
-
+include "../navbar.php";
 // Dados de exemplo (substitua pela sua conexão com a API)
 $usuarios = [
     ['id' => 1, 'nome' => 'Lucas ', 'email' => 'designer@empresa.com', 'tipo' => 'designer', 'status' => 'ativo'],
@@ -124,7 +123,7 @@ function statusBadge($status) {
     <div class="painel_adm">
         <h1 class="title_painel">Gerenciador de Usuários</h1>
         <p class="result_painel">Controle de acesso de designers e clientes</p>
-         <div>
+            <div>
                 <button class="btn btn-outline-secondary me-2">
                     <i class="bi bi-filter"></i> Filtrar
                 </button>

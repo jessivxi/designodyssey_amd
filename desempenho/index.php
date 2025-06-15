@@ -1,5 +1,5 @@
 <?php
-include "navbar.php";
+include "../navbar.php";
 
 // Dados de exemplo de desempenho (substitua pela sua conexão com o banco)
 $desempenhos = [
