@@ -34,7 +34,44 @@ $response = json_decode($responseJson, true);
                 <h3 class="mb-0">Editar Administrador</h3>
             </div>
             <div class="card-body p-5">
-                <form action="atualizar.php" method="POST">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                     <div class="row mb-4">
                         <div class="col-md-6">
