@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //pegando os dados do formulário
 
     if ($result) {
         echo "<p>Administrador adicionado com sucesso!</p>"; //MENSAGEM CASO SEJA SUCESSO OU ERRO
+        header("location:index.php");
     } else {
         echo "<p>Erro ao adicionar administrador.</p>";
     }

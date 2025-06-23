@@ -23,8 +23,9 @@ function nivelBadge($nivel)
 }
 
 // Função para status
-function statusBadge($status) {
-    return $status === 'ativo' 
+function statusBadge($status)
+{
+    return $status === 'ativo'
         ? '<span class="badge rounded-pill px-3 py-2" style="background:#10b981;color:#fff;font-weight:600;"><i class="bi bi-check-circle"></i> ATIVO</span>'
         : '<span class="badge rounded-pill px-3 py-2" style="background:#ef4444;color:#fff;font-weight:600;"><i class="bi bi-x-circle"></i> INATIVO</span>';
 }
@@ -176,26 +177,50 @@ function statusBadge($status) {
                     <?php
                     if ($response && is_array($response)) {
                         foreach ($response as $admin) {
-                            echo '<tr>';
+                            echo '<tr id="user-' . $admin['id'] . '">';
                             echo '<td>' . $admin['id'] . '</td>';
                             echo '<td>' . $admin['nome'] . '</td>';
                             echo '<td>' . $admin['email'] . '</td>';
                             echo '<td>' . nivelBadge($admin['nivel_acesso']) . '</td>';
                             echo '<td>Ativo</td>';  // Exemplo fixo de status
                             echo '<td>
-                            <a href="editar.php?id=' . $admin['id'] . '" class="btn btn-edit">Editar</a>
-                            <a href="deletar.php?id=' . $admin['id'] . '" class="btn btn-delete">Excluir</a>
-                            </td>';
+                                    <a href="editar.php?id=' . $admin['id'] . '" class="btn btn-edit">Editar</a>
+                                    <button onclick="deleteUser(' . $admin['id'] . ')" class="btn btn-delete">Excluir</button>
+                                </td>';
                             echo '</tr>';
                         }
                     } else {
                         echo '<tr><td colspan="6">Nenhum administrador encontrado.</td></tr>';
                     }
                     ?>
-                </tbody>
+                </tbody>    
             </table>
         </div>
     </div>
+    <script>
+        function deleteUser(userId) {
+            // Optional: Confirm with the user
+            if (!confirm('Are you sure you want to delete this user?')) return;
+
+            fetch('http://localhost/dashboard/api-designOdyssey/administrador/delete.php?id=' + userId, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove the row from the table
+                        document.getElementById('user-' + userId).remove();
+                        alert('User deleted successfully!');
+                    } else {
+                        alert('Failed to delete user: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error deleting user.');
+                });
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"> </script>
 </body>
 

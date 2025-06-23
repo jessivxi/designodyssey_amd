@@ -2,13 +2,13 @@
 
 $id = $_GET['id'];
 
-$url = 'http://localhost/dashboard/api-designOdyssey/administrador/index.php' . '?id=' . $id;
+$url = 'http://localhost/dashboard/api-designOdyssey/usuarios/index.php' . '?id=' . $id;
 $responseJson = file_get_contents($url);
 
 // Transforma o JSON em array PHP
 $response = json_decode($responseJson, true);
 
-$urlAPI = 'http://localhost/dashboard/api-designOdyssey/administrador/put.php' . '?id=' . $id;
+$urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/put.php' . '?id=' . $id;
 
 
 ?>
@@ -33,7 +33,7 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/administrador/put.php' .
     <form method="post" action="<?php echo $urlAPI ?>" class="container mt-5">
             <div class="card-header"
                 style="background: rgb(255, 255, 255); color: black; text-align: center;">
-                <h3 class="mb-0">Editar Administrador</h3>
+                <h3 class="mb-0">Editar Usuario</h3>
             </div>
             <div class="card-body p-5">
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
@@ -55,27 +55,22 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/administrador/put.php' .
                 </div>
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <label for="senha" class="form-label fs-6" style="color:rgb(0, 0, 0);">
-                            Senha
-                        </label>
-                        <input type="password" class="form-control" id="senha" name="senha" required>
+                        <label for="senha" class="form-label fs-6" style="color:rgb(0, 0, 0);">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" value="<?php echo htmlspecialchars($response['senha'] ?? ''); ?>">
                     </div>
                     <div class="col-md-6">
                         <label for="nivel_acesso" class="form-label fs-6" style="color:rgb(0, 0, 0);">
-                            Nível de Acesso
+                            Tipo
                         </label>
-                        <select class="form-select" id="nivel_acesso" name="nivel_acesso" required
+                        <select class="form-select" id="tipo" name="tipo" required
                             autocomplete="off">
                             <option value="">Selecione...</option>
-                            <option value="superadmin"
-                                <?php if (($response['nivel_acesso'] ?? '') == 'superadmin') echo 'selected'; ?>>
-                                Super Admin</option>
-                            <option value="moderador"
-                                <?php if (($response['nivel_acesso'] ?? '') == 'moderador') echo 'selected'; ?>>
-                                Moderador</option>
-                            <option value="suporte"
-                                <?php if (($response['nivel_acesso'] ?? '') == 'suporte') echo 'selected'; ?>>
-                                Suporte</option>
+                            <option value="designer"
+                                <?php if (($response['tipo'] ?? '') == 'designer') echo 'selected'; ?>>
+                                Designer</option>
+                            <option value="cliente"
+                                <?php if (($response['tipo'] ?? '') == 'cliente') echo 'selected'; ?>>
+                                Cliente</option>
                         </select>
                     </div>
                 </div>
