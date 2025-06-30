@@ -18,8 +18,6 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 // Funções para exibir os badges de Tipo e Status
 function tipoBadge($tipo) {
     switch ($tipo) {
-        case 'admin':
-            return '<span class="badge rounded-pill px-3 py-2 badge-admin"><i class="bi bi-shield-lock"></i> ADMIN</span>';
         case 'designer':
             return '<span class="badge rounded-pill px-3 py-2 badge-designer"><i class="bi bi-palette"></i> DESIGNER</span>';
         case 'cliente':
