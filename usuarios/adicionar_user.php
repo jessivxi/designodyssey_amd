@@ -1,6 +1,6 @@
 <?php
 
-$urlAPI = 'http://localhost/dashboard/api-designOdyssey/administrador/post.php';
+$urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/post.php';
 
 ?>
 <style>
@@ -100,11 +100,10 @@ form select {
     <input type="email" name="email" required>
     <label>Senha:</label>
     <input type="password" name="senha" required>
-    <label>Nível de acesso:</label>
-    <select name="nivel_acesso" required>
-        <option value="superadmin">Super Admin</option>
-        <option value="moderador">Moderador</option>
-        <option value="suporte">Suporte</option>
+    <label>tipo:</label>
+    <select name="tipo" required>
+        <option value="cliente">Cliente</option>
+        <option value="designer">designer</option>
     </select>
     <div class="btn-group">
         <button type="submit" class="btn-primary">Adicionar</button>

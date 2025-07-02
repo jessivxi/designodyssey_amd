@@ -18,7 +18,7 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/put.php' . '?id
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Administradores</title>
+    <title>Gerenciador de usuarios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
@@ -33,7 +33,7 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/put.php' . '?id
     <form method="post" action="<?php echo $urlAPI ?>" class="container mt-5">
             <div class="card-header"
                 style="background: rgb(255, 255, 255); color: black; text-align: center;">
-                <h3 class="mb-0">Editar Usuario</h3>
+                <h3 class="mb-0">Editar usuarios</h3>
             </div>
             <div class="card-body p-5">
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
@@ -55,29 +55,31 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/put.php' . '?id
                 </div>
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <label for="senha" class="form-label fs-6" style="color:rgb(0, 0, 0);">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" value="<?php echo htmlspecialchars($response['senha'] ?? ''); ?>">
+                        <label for="senha" class="form-label fs-6" style="color:rgb(0, 0, 0);">
+                            Senha
+                        </label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="nivel_acesso" class="form-label fs-6" style="color:rgb(0, 0, 0);">
+                        <label for="tipo" class="form-label fs-6" style="color:rgb(0, 0, 0);">
                             Tipo
                         </label>
                         <select class="form-select" id="tipo" name="tipo" required
                             autocomplete="off">
                             <option value="">Selecione...</option>
+                            <option value="selecione"
+                                <?php if (($response['tipo'] ?? '') == 'cliente') echo 'selected'; ?>>
+                                cliente</option>
                             <option value="designer"
                                 <?php if (($response['tipo'] ?? '') == 'designer') echo 'selected'; ?>>
-                                Designer</option>
-                            <option value="cliente"
-                                <?php if (($response['tipo'] ?? '') == 'cliente') echo 'selected'; ?>>
-                                Cliente</option>
+                                designer</option>
                         </select>
                     </div>
                 </div>
                 <div class="d-grid">
                 <div class="botoes-acao">
                     <button type="submit" class="btn btn-primary" style="background:rgb(56, 144, 216)">
-                        <i class="bi bi-save"></i> Salvar
+                        <i class="bi bi-save"></i> atualizar
                     </button>
                     <a href="index.php" class="btn btn-secondary">
                         <i class="bi bi-arrow-left"></i> Voltar
