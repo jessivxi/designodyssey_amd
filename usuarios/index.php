@@ -19,7 +19,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 function tipoBadge($tipo) {
     switch ($tipo) {
         case 'admin':
-            return '<span class="badge rounded-pill px-3 py-2" style="background:#6a11cb;color:#fff;font-weight:600;"><i class="bi bi-shield-lock"></i> ADMIN</span>';
+            return '<span class="badge rounded-pill px-3 py-2 badge-admin"><i class="bi bi-shield-lock"></i> ADMIN</span>';
         case 'designer':
             return '<span class="badge rounded-pill px-3 py-2" style="background:#0096D1;color:#fff;font-weight:600;"><i class="bi bi-palette"></i> DESIGNER</span>';
         case 'cliente':
