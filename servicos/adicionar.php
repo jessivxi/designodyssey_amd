@@ -63,6 +63,7 @@ form textarea {
     gap: 10px;
     margin-top: 10px;
 }
+
 .btn-primary {
     flex: 1;
     padding: 12px 0;
@@ -76,10 +77,12 @@ form textarea {
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
     transition: background 0.2s, transform 0.1s;
 }
+
 .btn-primary:hover {
     background: #007bb0;
     transform: translateY(-2px);
 }
+
 .btn-secondary {
     flex: 1;
     padding: 12px 0;
@@ -90,9 +93,10 @@ form textarea {
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: background 0.2s, transform 0.1s;
 }
+
 .btn-secondary:hover {
     background: #cccccc;
     transform: translateY(-2px);

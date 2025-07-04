@@ -128,8 +128,6 @@
             <li><a href="http://localhost/dashboard/designodyssey_amd/usuarios/">Gerenciamento de Usuário</a></li>
             <li><a href="http://localhost/dashboard/designodyssey_amd/administrador/">Gerenciamento de administrador</a></li>
             <li><a href="http://localhost/dashboard/designodyssey_amd/servicos/">Controle de Serviços</a></li>
-            <li><a href="http://localhost/dashboard/designodyssey_amd/desempenho/">Controle de desempenho</a></li>
-            <li><a href="http://localhost/dashboard/designodyssey_amd/controleImagens/">Controle de imagens</a></li>
             <li><a href="SuportTec.php">Suporte Técnico</a></li>
         </ul>
     </div>
