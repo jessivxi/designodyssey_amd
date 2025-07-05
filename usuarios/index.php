@@ -40,7 +40,7 @@ function tipoBadge($tipo) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body {
-            background: white;
+            background: #F5F7FA;
             min-height: 100vh;
         }
         .painel_adm {

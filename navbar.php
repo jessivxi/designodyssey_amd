@@ -2,146 +2,224 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Painel Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        :root {
+            --sidebar-width: 80px;
+            --sidebar-expanded: 250px;
+            --sidebar-bg:rgb(0, 0, 0);
+            --sidebar-color: #ecf0f1;
+            --primary-color: #3498db;
+            --transition-speed: 0.3s;
+        }
+
         body {
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .divisor_painel_adm {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 40px;
-            background:rgb(255, 255, 255);
-            width: calc(100vw - 250px); /* Não ultrapassa a sidebar */
-            border-bottom: 1px solid #ccc;
-            color: #222;
-            position: fixed;
-            top: 0;
-            left: 250px; /* Começa após a sidebar */
-            z-index: 1100;
-            box-shadow: none;
-            margin-bottom: 0;
-        }
-        .divisor_painel_adm .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-right: 24px;
-        }
-        .nav-icon-btn {
-            background: none;
-            border: none;
-            color: #222;
-            font-size: 1.3rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
-        .nav-icon-btn:hover {
-            color: #facc15;
-        }
-        .admin-status {
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            gap: 6px;
-            font-weight: 500;
-            background: none;
             padding: 0;
-            border-radius: 0;
-            color: #222;
+            transition: margin-left var(--transition-speed);
         }
+
+        /* Sidebar Compacta */
         .sidebar {
+            width: fit-content;
             height: 100vh;
-            width: 250px;
-            background-color: rgb(238, 238, 238);
-            color: black;
+            background: var(--sidebar-bg);
             position: fixed;
             top: 0;
             left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
             z-index: 1000;
-            box-shadow: 2px 0 8px #0001;
+            transition: width var(--transition-speed);
+            overflow: hidden;
         }
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: rgb(217, 217, 217);
-            margin-bottom: 10px;
+
+        .sidebar:hover {
+            width: var(--sidebar-expanded);
         }
-        .menu {
-            width: 100%;
-            list-style: none;
-            padding: 0;
-        }
-        .menu li {
-            width: 100%;
+
+        .sidebar-header {
+            padding: 20px 10px;
             text-align: center;
-            padding: 15px 0;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1100;
+            background: var(--sidebar-bg);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: background-color 0.3s;
-            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
-        .menu li a {
+
+        .menu-item {
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            color: var(--sidebar-color);
             text-decoration: none;
-            font-size: 13px;
-            color: black;
-            display: block;
+            gap: 20px;
+            transition: background-color var(--transition-speed);
         }
-        .menu a1 {
-            text-decoration: none;
-            font-size: 15px;
+
+        .menu-item i {
+            min-width: 24px;
+            font-size: 1.2rem;
             text-align: center;
-            color: rgba(0, 0, 0, 0.51);
+        }
+
+        .menu-item span {
+            display: none;
+            transition: opacity var(--transition-speed);
+        }
+
+        .sidebar:hover .menu-item span {
             display: block;
         }
-        .menu li a:hover {
-            color: #0096D1;
+
+        .menu-item:hover {
+            background-color: rgba(255,255,255,0.1);
         }
-        @media (max-width: 700px) {
-            .sidebar { width: 100vw; left: 0; top: 0; }
-            .divisor_painel_adm { left: 0; width: 100vw; }
+
+        .menu-item.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: margin-left var(--transition-speed);
+            padding: 20px;
+        }
+
+        /* Responsividade - Mobile */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                left: -100%;
+                transition: left var(--transition-speed);
+            }
+
+            .sidebar.active {
+                width: var(--sidebar-expanded);
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .sidebar .menu-item span {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para o ícone de 3 linhas (hamburguer) */
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Efeito quando o menu está ativo */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
     </style>
 </head>
 <body>
-    <!-- Linha superior fixa com ícones, agora só no conteúdo -->
-    <div class="sidebar">
-        <div class="profile-pic"></div>
-        <ul class="menu">
-            <a1 href="#">Administrador Odyssey</a1>
-        </ul>
-        <ul class="menu">
-            <li><a href="http://localhost/dashboard/designodyssey_amd/">Painel</a></li>
-            <li><a href="http://localhost/dashboard/designodyssey_amd/usuarios/">Gerenciamento de Usuário</a></li>
-            <li><a href="http://localhost/dashboard/designodyssey_amd/administrador/">Gerenciamento de administrador</a></li>
-            <li><a href="http://localhost/dashboard/designodyssey_amd/servicos/">Controle de Serviços</a></li>
-            <li><a href="SuportTec.php">Suporte Técnico</a></li>
-        </ul>
-    </div>
-    <div class="divisor_painel_adm">
-        <div class="nav-icons">
-            <form action="login.php" method="get" style="display:inline; margin:0; padding:0;">
-                <button type="submit" class="nav-icon-btn" title="Voltar para login">
-                    <i class="bi bi-box-arrow-left"></i>
-                </button>
-            </form>
-            <span class="admin-status" title="Administrador logado">
-                <i class="bi bi-person-circle"></i> ADM
-            </span>
+    <!-- Botão Hamburguer para Mobile -->
+    <button class="menu-toggle" id="menuToggle">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
+        </div>
+        
+        <a href="http://localhost/dashboard/designodyssey_amd/index.php"class="menu-item active">
+            <i class="bi bi-speedometer2"></i>
+            <span>Painel</span>
+        </a>
+        <a href="http://localhost/dashboard/designodyssey_amd/usuarios/index.php" class="menu-item">
+            <i class="bi bi-people-fill"></i>
+            <span>Usuários</span>
+        </a>
+        <a href="http://localhost/dashboard/designodyssey_amd/administrador/index.php"  class="menu-item">
+            <i class="bi bi-shield-lock"></i>
+            <span>Administradores</span>
+        </a>
+        <a href="http://localhost/dashboard/designodyssey_amd/servicos/index.php" class="menu-item">
+            <i class="bi bi-gear-fill"></i>
+            <span>Serviços</span>
+        </a>
+        <a href="suporte.php" class="menu-item">
+            <i class="bi bi-headset"></i>
+            <span>Suporte</span>
+        </a>
+        <a href="logout.php" class="menu-item" style="margin-top: auto;">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sair</span>
+        </a>
     </div>
+    <script>
+        // Controle do menu hamburguer
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.querySelector('.hamburger');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Fechar o menu ao clicar em um item (mobile)
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

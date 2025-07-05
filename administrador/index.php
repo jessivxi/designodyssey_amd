@@ -42,7 +42,7 @@ function statusBadge($status)
     <style>
         /* Estilos gerais (consistentes com o anterior) */
         body {
-            background: white;
+            background: #F5F7FA;
             min-height: 100vh;
         }
 

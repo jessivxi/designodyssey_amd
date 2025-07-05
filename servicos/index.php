@@ -1,6 +1,7 @@
 <?php
 include "../navbar.php";
 
+
 // Requisição para a API (buscando todos os serviços)
 $url = 'http://localhost/dashboard/api-designOdyssey/servicos/index.php';
 $responseJson = @file_get_contents($url);
@@ -42,7 +43,7 @@ function categoriaBadge($cat) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body {
-            background: white;
+            background: #F5F7FA;
             min-height: 100vh;
         }
         .painel_adm {

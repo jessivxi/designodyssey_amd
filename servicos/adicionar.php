@@ -103,7 +103,6 @@ form textarea {
 }
 </style>
 
-?>
 <form method="post" action="<?php echo $urlAPI ?>">
     <label>ID Freelancer:</label>
     <input type="number" name="id_freelancer" required>

@@ -1,16 +1,13 @@
 <?php
 
+    $id = $_GET['id'];
 
+    $url = 'http://localhost/dashboard/api-designOdyssey/servicos/index.php?id=' . $id;
+    $responseJson = file_get_contents($url);
 
-$id = $_GET['id'];
-
-$url = 'http://localhost/dashboard/api-designOdyssey/servicos/index.php?id=' . $id;
-$responseJson = file_get_contents($url);
-
-// Transforma o JSON em array PHP
-$response = json_decode($responseJson, true);
-
-$urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . $id;
+    // Transforma o JSON em array PHP
+    $response = json_decode($responseJson, true);
+    $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . $id;
 
 ?>
 <!DOCTYPE html>
@@ -23,10 +20,10 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-    .botoes-acao {
-        display: flex;
-        gap: 8px;
-    }
+        .botoes-acao {
+            display: flex;
+            gap: 8px;
+        }
     </style>
 </head>
 
