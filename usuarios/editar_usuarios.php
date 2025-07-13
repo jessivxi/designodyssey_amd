@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if (($_SESSION["logado"] == FALSE) || !isset($_SESSION["logado"])) {
+    header( 'Location: http://localhost/dashboard/designodyssey_amd/login/login.php');
+}
+
 $id = $_GET['id'];
 
 $url = 'http://localhost/dashboard/api-designOdyssey/usuarios/index.php' . '?id=' . $id;
@@ -66,8 +71,8 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/usuarios/put.php' . '?id
                         </label>
                         <select class="form-select" id="tipo" name="tipo" required
                             autocomplete="off">
-                            <option value="">Selecione...</option>
-                            <option value="selecione"
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="cliente"
                                 <?php if (($response['tipo'] ?? '') == 'cliente') echo 'selected'; ?>>
                                 cliente</option>
                             <option value="designer"

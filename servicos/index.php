@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+if (($_SESSION["logado"] == FALSE) || !isset($_SESSION["logado"])) {
+    header( 'Location: http://localhost/dashboard/designodyssey_amd/login/login.php');
+}
+
+
 include "../navbar.php";
 
 
@@ -23,10 +30,10 @@ function categoriaBadge($cat) {
             return '<span class="badge rounded-pill px-3 py-2" style="background:#0096D1;color:#fff;font-weight:600;"><i class="bi bi-globe"></i> WEB</span>';
         case 'grafico':
             return '<span class="badge rounded-pill px-3 py-2" style="background:#10b981;color:#fff;font-weight:600;"><i class="bi bi-brush"></i> GRÁFICO</span>';
-        case 'arte_digital':
+        case 'digital':
             return '<span class="badge rounded-pill px-3 py-2" style="background:#f59e0b;color:#fff;font-weight:600;"><i class="bi bi-image"></i> ARTE DIGITAL</span>';
-        case 'ux/ui':
-            return '<span class="badge rounded-pill px-3 py-2" style="background:#a000d1;color:#fff;font-weight:600;"><i class="bi bi-image"></i> </span>';
+        case 'logotipo':
+            return '<span class="badge rounded-pill px-3 py-2" style="background:#a000d1;color:#fff;font-weight:600;"><i class="bi bi-image"></i> LOGOTIPO</span>';
         default:
             return '<span class="badge rounded-pill bg-light text-dark px-3 py-2">' . strtoupper($cat) . '</span>';
     }
@@ -163,17 +170,13 @@ function categoriaBadge($cat) {
                         foreach ($servicos as $servico) {
                             echo '<tr id="servico-' . $servico['id'] . '">';
                             echo '<td>' . htmlspecialchars($servico['id']) . '</td>';
-                            echo '<td>' . htmlspecialchars($servico['id_freelancer']) . '</td>';
+                            echo '<td>' . htmlspecialchars($servico['nome']) . '</td>';
                             echo '<td>' . categoriaBadge($servico['categoria']) . '</td>';
                             echo '<td>' . htmlspecialchars($servico['titulo']) . '</td>';
                             echo '<td>R$ ' . number_format($servico['preco_base'], 2, ',', '.') . '</td>';
                             echo '<td>
-                                    <a href="editar.php?id=' . $servico['id'] . '" class="btn btn-edit btn-action me-1">
-                                        <i class="bi bi-pencil"></i> Editar
-                                    </a>
-                                    <button onclick="deleteServico(' . $servico['id'] . ')" class="btn btn-delete btn-action">
-                                        <i class="bi bi-trash"></i> Excluir
-                                    </button>
+                                    <a href="editar.php?id=' . $servico['id'] . '" class="btn btn-edit">Editar</a>
+                                    <button onclick="deleteServico(' . $servico['id'] . ')" class="btn btn-delete">Excluir</button>
                                 </td>';
                             echo '</tr>';
                         }
@@ -194,14 +197,17 @@ function categoriaBadge($cat) {
                 })
                 .then(response => response.json())
                 .then(data => {
-                                if (data.success) {
-                                    document.getElementById('servico-' + servicoId).remove();
-                                    alert('Serviço excluído com sucesso!');
-                                } else {
-                                    alert('Erro ao excluir o serviço.');
-                                }
-                            })
-                            .catch(error => {
-                                alert('Erro na requisição: ' + error);
-                            });
+                    if (data.success) {
+                        // Remove the row from the table
+                        document.getElementById('user-' + servicoId).setAttribute();
+                        alert('User deleted successfully!');
+                    } else {
+                        alert('Failed to delete user: ' + data.message);
                     }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error deleting user.');
+                });
+        }
+    </script>

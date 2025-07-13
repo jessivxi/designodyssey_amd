@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (($_SESSION["logado"] == FALSE) || !isset($_SESSION["logado"])) {
+    header( 'Location: http://localhost/dashboard/designodyssey_amd/login/login.php');
+}
 
 // Verifica se o usuário está logado como ADMIN
 

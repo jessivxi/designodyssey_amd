@@ -194,7 +194,7 @@
             <i class="bi bi-headset"></i>
             <span>Suporte</span>
         </a>
-        <a href="logout.php" class="menu-item" style="margin-top: auto;">
+        <a href="http://localhost/dashboard/designodyssey_amd/encerrar_sessao.php" class="menu-item" style="margin-top: auto;">
             <i class="bi bi-box-arrow-right"></i>
             <span>Sair</span>
         </a>

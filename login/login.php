@@ -15,12 +15,12 @@ $UrlApi = 'http://localhost/dashboard/api-designOdyssey/auth/login-admin.php';
         <h1>Login - Administrador</h1>
         <form method="POST" action="<?php echo $UrlApi; ?>">
             <div class="form-group">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="senha" required>
             </div>
             <button type="submit" class="btn">Entrar</button>
         </form>

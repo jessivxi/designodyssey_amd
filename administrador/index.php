@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (($_SESSION["logado"] == FALSE) || !isset($_SESSION["logado"])) {
+    header( 'Location: http://localhost/dashboard/designodyssey_amd/login/login.php');
+}
 include "../navbar.php";
 
 $url = 'http://localhost/dashboard/api-designOdyssey/administrador/index.php';

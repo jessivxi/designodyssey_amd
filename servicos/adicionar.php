@@ -106,29 +106,22 @@ form textarea {
 <form method="post" action="<?php echo $urlAPI ?>">
     <label>ID Freelancer:</label>
     <input type="number" name="id_freelancer" required>
-    <label>ID Categoria:</label>
-    <input type="number" name="id_categoria" required>
     <label>Título:</label>
     <input type="text" name="titulo" maxlength="100" required>
     <label>Descrição:</label>
     <textarea name="descricao" rows="4" required></textarea>
     <label>Categoria:</label>
-    <select name="categoria" required>
+    <select name="id_categoria" required>
         <option value="">Selecione...</option>
-        <option value="web">Web</option>
-        <option value="grafico">Gráfico</option>
-        <option value="ux_ui">UX/UI</option>
-        <option value="arte_digital">Arte Digital</option>
+        <option value="1">Web</option>
+        <option value="2">Gráfico</option>
+        <option value="3">Logotipo</option>
+        <option value="4">Arte Digital</option>
     </select>
     <label>Preço Base:</label>
-    <input type="number" step="0.01" name="preco_base" required>
+    <input type="text"  name="preco_base" required>
     <label>Pacotes (JSON):</label>
     <textarea name="pacotes" rows="2" placeholder='Opcional. Exemplo: [{"nome":"Básico","valor":100.00}]'></textarea>
-    <label>Destaque:</label>
-    <select name="destaque">
-        <option value="0">Não</option>
-        <option value="1">Sim</option>
-    </select>
     <div class="btn-group">
         <button type="submit" class="btn-primary">Adicionar</button>
         <button type="button" class="btn-secondary" onclick="window.location.href='index.php'">Voltar</button>
