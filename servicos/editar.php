@@ -13,6 +13,8 @@ $responseJson = file_get_contents($url);
 
 // Transforma o JSON em array PHP
 $response = json_decode($responseJson, true);
+// echo var_dump($response);
+// exit;
 $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . $id;
 
 ?>
@@ -45,14 +47,12 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . 
                 <div class="col-md-6">
                     <label for="nome" class="form-label fs-6"
                         style="color:rgb(0, 0, 0);">id freelancer</label>
-                    <input type="text" class="form-control" id="id_freelancer" name="id_freelancer" required autocomplete="id_freelancer">
+                    <input value="<?php echo htmlspecialchars($response['id_freelancer'] ?? ''); ?>" type="text" class="form-control" id="id_freelancer" name="id_freelancer" required autocomplete="id_freelancer">
                 </div>
                 <div class="col-md-3"> 
                     <label form="foto" class="form-label fs-6"
                         style="color:black">Icone</label>
-                    <input type="file" class="form_control" id="icone" name="icone"
-                        value="<?php echo htmlspecialchars($response['id_Categoria'] ?? ''); ?>"
-                        autocomplete="email"> 
+                    <input type="file" class="form_control" id="icone" name="icone"> 
                 </div>
             </div>
             <div class="row mb-4">
@@ -60,13 +60,13 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . 
                     <label for="titulo" class="form-label fs-6" style="color:rgb(0, 0, 0);">
                         Titulo
                     </label>
-                    <input type="text" class="form-control" id="senha" name="titulo" required>
+                    <input value="<?php echo htmlspecialchars($response['titulo'] ?? ''); ?>" type="text" class="form-control" id="senha" name="titulo" required>
                 </div>
                 <div class="col-md-6">
                     <label for="descricao" class="form-label fs-6" style="color:rgb(0, 0, 0);">
                         Descrição
                     </label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" required>
+                    <input value="<?php echo htmlspecialchars($response['descricao'] ?? ''); ?>" type="text" class="form-control" id="descricao" name="descricao" required>
                 </div>
 
                 <div class="col-md-3">
@@ -74,24 +74,23 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . 
                         Categoria
                     </label>
                     <select class="form-select" id="categoria" name="id_categoria" required autocomplete="off">
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value="1">Web</option>
-                        <option value="2">Grafico</option>
-                        <option value="3">Logotipo</option>
-                        <option value="4">Digital</option>
+                        <option id="web" value="1">Web</option>
+                        <option id="grafico" value="2">Grafico</option>
+                        <option id="logotipo" value="3">Logotipo</option>
+                        <option id="digital" value="4">Digital</option>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <label for="preco_base" class="form-label fs-6" style="color:rgb(0, 0, 0);">
                         Preço base
                     </label>
-                    <input type="text" class="form-control" id="preco_base" name="preco_base" required>
+                    <input value="<?php echo htmlspecialchars($response['preco_base'] ?? ''); ?>" type="text" class="form-control" id="preco_base" name="preco_base" required>
                 </div>
                 <div class="col-md-6">
                     <label for="Pacotes" class="form-label fs-6" style="color:rgb(0, 0, 0);">
                         Pacotes
                     </label>
-                    <input type="text" class="form-control" rows="2"  id="pacotes" name="pacotes" placeholder='Opcional. Exemplo: [{"nome":"Básico","valor":100.00}]'> </input>
+                    <input value="<?php echo htmlspecialchars($response['pacotes'] ?? ''); ?>" type="text" class="form-control" rows="2"  id="pacotes" name="pacotes" placeholder='Opcional. Exemplo: [{"nome":"Básico","valor":100.00}]'> </input>
                 </div>
             </div>
             <div class="d-grid">
@@ -106,5 +105,26 @@ $urlAPI = 'http://localhost/dashboard/api-designOdyssey/servicos/put.php?id=' . 
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const valorCategoria = "<?php echo $response['categoria']?>"
+            document.addEventListener('DOMContentLoaded', function (){
+                const categoriaWeb = document.getElementById('web') 
+                const categoriaGrafico = document.getElementById('grafico') 
+                const categoriaLogotipo = document.getElementById('logotipo') 
+                const categoriaDigital = document.getElementById('digital') 
+
+                if(valorCategoria === 'web') {
+                    categoriaWeb.setAttribute("selected", "selected")
+                } else if (valorCategoria === 'grafico') {
+                    categoriaGrafico.setAttribute("selected", "selected")
+                } else if (valorCategoria === 'logotipo'){
+                    categoriaLogotipo.setAttribute("selected", "selected")
+                }else if (valorCategoria === 'digital'){
+                    categoriaDigital.setAttribute("selected", "selected")
+                } else {
+                    return;
+                }
+            }) 
+        </script>
 </body>
 </html>
